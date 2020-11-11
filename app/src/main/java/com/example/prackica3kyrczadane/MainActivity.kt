@@ -14,10 +14,7 @@ import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
-    var phones: Array<String> = arrayOf(
-        "Virat Kohli", "Rohit Sharma", "Steve Smith",
-        "Kane Williamson", "Ross Taylor"
-    )
+    var phones: ArrayList<String> = ArrayList()
     var adapter: ArrayAdapter<String>? = null
 
     var selectedPhones: String? = null
@@ -28,7 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         val navController = Navigation.findNavController(this,R.id.nav_host_fragment)
         NavigationUI.setupWithNavController(bottomNavigationView,navController)
-
+        phones.add("iPhone 7");
+        phones.add("Samsung Galaxy S7");
+        phones.add("Google Pixel");
+        phones.add("Huawei P10");
+        phones.add("HP Elite z3");
         adapter = ArrayAdapter(
             this,
             android.R.layout.simple_list_item_single_choice,
